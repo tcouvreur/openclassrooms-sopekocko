@@ -3,7 +3,7 @@ const helmet = require("helmet");
 const app = express();
 require("dotenv").config();
 
-global.render=require("./controllers/render");
+global.render=require("./backend/controllers/render");
 global.bodyParser = require("body-parser");
 
 app.use(helmet());
@@ -17,7 +17,7 @@ app.use(helmet());
 //   });
 // });
 
-const sauces = require("./routes/sauces");
+const sauces = require("./backend/routes/sauces");
 app.use("/api", sauces);
 
 app.listen(process.env.PORT || 3001);
